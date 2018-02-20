@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-blue);
+$app-secondary: mat-palette($mat-deep-purple);
+$app-warning: mat-palette($mat-deep-orange);
+
+$app-dark-theme: mat-dark-theme($app-primary, $app-secondary, $app-warning);
+
+@include angular-material-theme($app-dark-theme);
+

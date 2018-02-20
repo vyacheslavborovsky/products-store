@@ -1,0 +1,27 @@
+<div class="col-12-center grid-center-spaceAround">
+  <div class="col-1" data-push-left="off-10">
+    <button matTooltip="Close" matTooltipPosition="left" class="close-button" mat-icon-button (click)="closePanel()">
+      <mat-icon class="mdi mdi-window-close mdi-18px"></mat-icon>
+    </button>
+  </div>
+  <div class="col-5 label"><h4>Product ID</h4></div>
+  <div class="col-7 value"><h4>{{selectedItem['product_id']}}</h4></div>
+
+  <div class="col-5 label"><h4>Name</h4></div>
+  <div class="col-7 value"><h4>{{selectedItem['product_name']}}</h4></div>
+
+  <div class="col-5 label"><h4>Category</h4></div>
+  <div class="col-7 value"><h4>{{selectedItem['product_category']}}</h4></div>
+
+  <div class="col-5 label"><h4>Description</h4></div>
+  <div class="col-7 value description"><span>{{selectedItem['description']}}</span></div>
+
+  <div class="col-5 label"><h4>Image URL</h4></div>
+  <div class="col-7 value"><h4><a [href]="selectedItem['image']" target="_blank">{{selectedItem['image']}}</a></h4></div>
+
+  <div class="col-5 label"><h4>Price</h4></div>
+  <div class="col-7 value"><h4>{{selectedItem['price'] | currency}}</h4></div>
+
+  <div class="col-5 label"><h4>Color</h4></div>
+  <div class="col-7 value" [ngStyle]="{'background' : selectedItem['color']}"></div>
+</div>

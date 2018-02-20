@@ -1,0 +1,15 @@
+@import "./material";
+@import '../../../node_modules/gridlex/src/gridlex';
+
+body {
+  height: 100%;
+
+  .align-center {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+

@@ -1,0 +1,62 @@
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 400px;
+  padding: 25px;
+  background: transparentize(#000, .15);
+
+  > div {
+    height: 25px !important;
+    max-height: 100px;
+  }
+
+  .label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  .value {
+    font-size: 18px;
+    color: coral;
+    max-height: 100px;
+
+    &:hover {
+      cursor: pointer;
+      color: #56c8d8;
+    }
+
+    &.description {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 200px !important;
+    }
+
+    a {
+      word-break: break-all;
+      color: inherit !important;
+    }
+  }
+
+  .close-button {
+    color: #9cff57;
+
+    &:hover {
+      color: orangered;
+    }
+
+    .mat-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

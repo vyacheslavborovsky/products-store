@@ -1,0 +1,23 @@
+<div class="card-container grid-noGutter-spaceAround"
+     data-infinite-scroll
+     [infiniteScrollDistance]="scrollDistance"
+     [infiniteScrollUpDistance]="scrollUpDistance"
+     [infiniteScrollThrottle]="throttle"
+     (scrolled)="onScrollToDown()"
+>
+  <mat-card
+    *ngFor="let item of visibleItems"
+    class="grid_xlg-4-lg-4_md-10_sm-12_xs-12 product-card mat-elevation-z8"
+    [ngClass]="{'selected' : this.selectedItem && this.selectedItem['product_id'] === item['product_id']}"
+  >
+    <mat-card-title class="col-12" (click)="chooseItem(item)">{{item['product_id']}} - {{item['product_name']}}</mat-card-title>
+    <mat-card-content class="col-12">
+      <img [src]="item['image']" class="product-card__image" (click)="openImage(item['image'])"/>
+    </mat-card-content>
+    <mat-card-footer class="col-12 grid">
+      <mat-card-actions class="grid-noGutter">
+        <button class="action-button__select col-1" mat-raised-button (click)="chooseItem(item)">Select</button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

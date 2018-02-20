@@ -1,0 +1,19 @@
+<div class="grid-noGutter-center-middle">
+  <h1 class="col-center" *ngIf="isLoading === false">{{headerText}}</h1>
+  <mat-spinner *ngIf="isLoading" class="align-center"></mat-spinner>
+  <app-product-card
+    class="grid-noGutter"
+    *ngIf="isLoading === false"
+    [items]="productItems"
+    [selectedItem]="selectedItem"
+    (onSelectProduct)="selectItemHandler($event)">
+  </app-product-card>
+  <app-product-details
+    class="grid-noGutter details-container"
+    *ngIf="selectedItem"
+    [selectedItem]="selectedItem"
+    (onClosePanel)="resetSelectedItem($event)"
+  ></app-product-details>
+</div>
+
+
