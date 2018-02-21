@@ -3,8 +3,7 @@ import { ProductGridComponent } from './products/product-grid/product-grid.compo
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'product-grid', pathMatch: 'full' },
-  { path: 'product-grid', component: ProductGridComponent }
+    { path: '', loadChildren: './products/products.module#ProductsModule'},
 ];
 
 @NgModule({
