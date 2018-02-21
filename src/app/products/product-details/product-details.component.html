@@ -17,11 +17,19 @@
   <div class="col-7 value description"><span>{{selectedItem['description']}}</span></div>
 
   <div class="col-5 label"><h4>Image URL</h4></div>
-  <div class="col-7 value"><h4><a [href]="selectedItem['image']" target="_blank">{{selectedItem['image']}}</a></h4></div>
+  <div class="col-7 value"><h4 matTooltip="View in a new tab" matTooltipPosition="above">
+    <a class="url-value" [href]="selectedItem['image']" target="_blank">{{selectedItem['image']}}</a></h4>
+  </div>
 
   <div class="col-5 label"><h4>Price</h4></div>
   <div class="col-7 value"><h4>{{selectedItem['price'] | currency}}</h4></div>
 
   <div class="col-5 label"><h4>Color</h4></div>
-  <div class="col-7 value" [ngStyle]="{'background' : selectedItem['color']}"></div>
+  <div class="col-7 value"
+       [ngStyle]="{'background' : selectedItem['color'],
+       'display': 'flex',
+       'color' : '#fff'
+       }">
+    <span class="color">{{selectedItem['color']}}</span>
+  </div>
 </div>

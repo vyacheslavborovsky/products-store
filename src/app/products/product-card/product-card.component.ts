@@ -18,7 +18,8 @@ export class ProductCardComponent implements OnInit {
   to = 12;
   visibleItems = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.onScrollToDown();
@@ -27,9 +28,9 @@ export class ProductCardComponent implements OnInit {
   updateFromTo = () => {
     this.from = this.to;
     this.to = this.to * 2;
-  }
+  };
 
-  onScrollToDown () {
+  onScrollToDown() {
     if (this.from <= this.items.length - 1) {
       if (this.to <= this.items.length - 1) {
         this.visibleItems = this.visibleItems.concat(this.items.slice(this.from, this.to));
@@ -41,11 +42,12 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
-  chooseItem (selectedItem) {
+  chooseItem(selectedItem) {
     this.onSelectProduct.emit(selectedItem);
   }
 
-  openImage (imageUrl) {
-    window.open(imageUrl);
+  openImage(item) {
+    this.onSelectProduct.emit(item);
+    window.open(item['image']);
   }
 }

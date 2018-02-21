@@ -4,6 +4,7 @@
      [infiniteScrollUpDistance]="scrollUpDistance"
      [infiniteScrollThrottle]="throttle"
      (scrolled)="onScrollToDown()"
+     *ngIf="visibleItems.length > 0"
 >
   <mat-card
     *ngFor="let item of visibleItems"
@@ -12,7 +13,7 @@
   >
     <mat-card-title class="col-12" (click)="chooseItem(item)">{{item['product_id']}} - {{item['product_name']}}</mat-card-title>
     <mat-card-content class="col-12">
-      <img [src]="item['image']" class="product-card__image" (click)="openImage(item['image'])"/>
+      <img matTooltip="View in a new tab" matTooltipPosition="above"  [src]="item['image']" class="product-card__image" (click)="openImage(item)"/>
     </mat-card-content>
     <mat-card-footer class="col-12 grid">
       <mat-card-actions class="grid-noGutter">

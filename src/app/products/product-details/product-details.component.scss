@@ -30,10 +30,6 @@
     color: coral;
     max-height: 100px;
 
-    &:hover {
-      cursor: pointer;
-      color: #56c8d8;
-    }
 
     &.description {
       overflow-y: auto;
@@ -41,10 +37,24 @@
       max-height: 200px !important;
     }
 
+    .url-value {
+      text-decoration: none ;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: #56c8d8 !important;
+      }
+    }
+
     a {
       word-break: break-all;
       color: inherit !important;
     }
+  }
+
+  .color {
+    margin: auto;
   }
 
   .close-button {
